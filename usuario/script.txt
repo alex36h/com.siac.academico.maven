@@ -1,0 +1,58 @@
+CREATE TABLE
+    IF NOT EXISTS grupo
+(
+    codigo SERIAL8     NOT NULL,
+    nombre VARCHAR(32) NOT NULL,
+    CONSTRAINT pk_id_grupo PRIMARY KEY (codigo)
+) WITHOUT OIDS;
+
+CREATE TABLE
+    IF NOT EXISTS usuario
+(
+    "alias"   VARCHAR(32) NOT NULL,
+    clave     BYTEA       NOT NULL,
+    nombres   VARCHAR(64) NOT NULL,
+    apellidos VARCHAR(64) NOT NULL,
+    grupo     BIGINT      NOT NULL,
+    foto      BYTEA       NULL,
+    activo    BOOLEAN     NOT NULL,
+    CONSTRAINT pk_id_usuario PRIMARY KEY ("alias"),
+    CONSTRAINT fk_grupo_usuario FOREIGN KEY (grupo) REFERENCES grupo (codigo) ON DELETE NO ACTION ON UPDATE CASCADE
+) WITHOUT OIDS;
+
+CREATE TABLE
+    IF NOT EXISTS rol
+(
+    codigo SERIAL8     NOT NULL,
+    nombre VARCHAR(64) NOT NULL,
+    orden  INT2        NOT NULL,
+    CONSTRAINT pk_id_rol PRIMARY KEY (codigo)
+) WITHOUT OIDS;
+
+CREATE TABLE
+    IF NOT EXISTS permiso
+(
+    codigo     SERIAL8      NOT NULL,
+    nombre     VARCHAR(32)  NOT NULL,
+    rol        BIGINT       NOT NULL,
+    padre      BOOLEAN      NOT NULL,
+    submenu    BIGINT       NULL,
+    paquete    VARCHAR(128) NULL,
+    formulario VARCHAR(128) NULL,
+    orden      INT2         NOT NULL,
+    CONSTRAINT pk_id_permiso PRIMARY KEY (codigo),
+    CONSTRAINT fk_rol_permiso FOREIGN KEY (rol) REFERENCES rol (codigo) ON DELETE NO ACTION ON UPDATE CASCADE,
+    CONSTRAINT fk_submnenu_id FOREIGN KEY (submenu) REFERENCES permiso (codigo) ON DELETE NO ACTION ON UPDATE CASCADE
+) WITHOUT OIDS;
+
+CREATE TABLE
+    IF NOT EXISTS grupoPermiso
+(
+    grupo   BIGINT      NOT NULL,
+    permiso BIGINT      NOT NULL,
+    modo    VARCHAR(10) NOT NULL,
+    inicio  BOOLEAN     NOT NULL,
+    CONSTRAINT pk_id_grupo_permiso PRIMARY KEY (grupo, permiso),
+    CONSTRAINT fk_grupo_grupo_permiso FOREIGN KEY (grupo) REFERENCES grupo (codigo) ON DELETE NO ACTION ON UPDATE CASCADE,
+    CONSTRAINT fk_permiso_grupo_permiso FOREIGN KEY (permiso) REFERENCES permiso (codigo) ON DELETE NO ACTION ON UPDATE CASCADE
+) WITHOUT OIDS;

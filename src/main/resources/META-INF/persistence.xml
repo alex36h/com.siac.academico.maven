@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.siac.academico" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.siac.entities.Tiporesponsable</class>
+    <class>com.siac.entities.Ciudad</class>
+    <class>com.siac.entities.Arancel</class>
+    <class>com.siac.entities.Planestudiosdetalle</class>
+    <class>com.siac.entities.Prematricula</class>
+    <class>com.siac.entities.Docentetrabajoanterior</class>
+    <class>com.siac.entities.Responsableestudiante</class>
+    <class>com.siac.entities.Antecedentealergiaestudiante</class>
+    <class>com.siac.entities.Tipocolegio</class>
+    <class>com.siac.entities.Familiar</class>
+    <class>com.siac.entities.Alergia</class>
+    <class>com.siac.entities.Detallerecibo</class>
+    <class>com.siac.entities.Planestudios</class>
+    <class>com.siac.entities.Recibo</class>
+    <class>com.siac.entities.Modalidad</class>
+    <class>com.siac.entities.Cierrecaja</class>
+    <class>com.siac.entities.Detalleiniciocaja</class>
+    <class>com.siac.entities.Enfermedad</class>
+    <class>com.siac.entities.Moneda</class>
+    <class>com.siac.entities.Formapago</class>
+    <class>com.siac.entities.Persona</class>
+    <class>com.siac.entities.Cursos</class>
+    <class>com.siac.entities.Reciboarancel</class>
+    <class>com.siac.entities.Docente</class>
+    <class>com.siac.entities.Cargosempleado</class>
+    <class>com.siac.entities.Asignaturas</class>
+    <class>com.siac.entities.Banco</class>
+    <class>com.siac.entities.Parentesco</class>
+    <class>com.siac.entities.Detallecierrecaja</class>
+    <class>com.siac.entities.Estudiante</class>
+    <class>com.siac.entities.Responsableestudianteprematricula</class>
+    <class>com.siac.entities.Colegio</class>
+    <class>com.siac.entities.Cursoinscripcion</class>
+    <class>com.siac.entities.Serierecibo</class>
+    <class>com.siac.entities.Periodolectivo</class>
+    <class>com.siac.entities.Tipocambio</class>
+    <class>com.siac.entities.Pais</class>
+    <class>com.siac.entities.Iniciocaja</class>
+    <class>com.siac.entities.Cargo</class>
+    <class>com.siac.entities.Turno</class>
+    <class>com.siac.entities.Descuento</class>
+    <class>com.siac.entities.Credencial</class>
+    <class>com.siac.entities.Antecedenteenfestudiante</class>
+    <class>com.siac.entities.Profesion</class>
+    <class>com.siac.entities.Aniolectivo</class>
+    <class>com.siac.entities.Aulas</class>
+    <class>com.siac.entities.Turno_1</class>
+    <class>com.siac.entities.Pagoestudiante</class>
+    <class>com.siac.entities.Mensualidadesperiodo</class>
+    <class>com.siac.entities.Persona_1</class>
+    <class>com.siac.entities.Profesion_1</class>
+    <class>com.siac.entities.Tipobeca</class>
+    <class>com.siac.entities.Beca</class>
+    <class>com.siac.entities.Arancelgravado</class>
+    <class>com.siac.entities.Permiso</class>
+    <class>com.siac.entities.Grupopermiso</class>
+    <class>com.siac.entities.Grupo</class>
+    <class>com.siac.entities.Rol</class>
+    <class>com.siac.entities.Usuario</class>
+    <class>com.siac.entities.Gruporol</class>
+    <class>com.siac.entities.RolGrupousuario</class>
+    <class>com.siac.entities.Rolcredencial</class>
+    <class>com.siac.entities.Rolgrupousuario</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/siac?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="12345"/>
+    </properties>
+  </persistence-unit>
+</persistence>
